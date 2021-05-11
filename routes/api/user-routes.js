@@ -53,6 +53,7 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
 	// if req.body has exact key/value pair to match the model, req.body can be used
 	User.update(req.body, {
+		individualHooks: true,
 		where: {
 			id: req.params.id,
 		},
